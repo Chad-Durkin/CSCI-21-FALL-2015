@@ -48,7 +48,44 @@ int main (int argc, char* argv[]) {
  * @return the output specified in the documentation above 
  */
 string goldilocks (string item, int number) {
-	// CODE HERE
+	
+	if(item == "porridge")
+	{
+		if(number == 1)
+		return string("This porridge is too hot");
+		else if(number == 2)
+		return string("This porridge is too cold");
+		else if(number == 3)
+		return string("This porridge is just right");
+		else
+		return string("This porridge is just right");
+	}
+	
+	if(item == "chair")
+	{
+		if(number == 1)
+		return string("This chair is too big");
+		else if(number == 2)
+		return string("This chair is too small");	
+		else if(number == 3)
+		return string("This chair is just right");
+		else
+		return string("This chair is just right");
+	}
+	
+	if(item == "bed")
+	{
+		if(number == 1)
+		return string("This bed is too hard");
+		else if(number == 2)
+		return string("This bed is too soft");
+		else if(number == 3)
+		return string("This bed is just right");
+		else
+		return string("This bed is just right");
+	}
+		
+
 }
 
 /*
@@ -66,9 +103,48 @@ string goldilocks (string item, int number) {
  *           cannot be determined (which can happen if an invalid argument is passed in)
  */
 int rockScissorPaper (char playerOne, char playerTwo) {
-	// CODE HERE
 	
-	// YOU MUST USE A SWITCH IN THIS FUNCTION
+	switch (playerOne)
+	{
+		case 'r':
+		case 'R':
+		
+			if(playerTwo == 'r' || playerTwo == 'R')
+				return 3;
+			else if(playerTwo == 's' || playerTwo == 'S')
+				return 1;
+			else if(playerTwo == 'p' || playerTwo == 'P')
+				return 2;
+			else return 0;
+			break;
+			
+		case 's':
+		case 'S':
+		
+			if(playerTwo == 'r' || playerTwo == 'R')
+				return 2;
+			else if(playerTwo == 's' || playerTwo == 'S')
+				return 3;
+			else if(playerTwo == 'p' || playerTwo == 'P')
+				return 1;
+			else return 0;
+			break;
+			
+		case 'p':
+		case 'P':
+		
+			if(playerTwo == 'r' || playerTwo == 'R')
+				return 1;
+			else if(playerTwo == 's' || playerTwo == 'S')
+				return 2;
+			else if(playerTwo == 'p' || playerTwo == 'P')
+				return 3;
+			else return 0;
+			break;	
+		
+		default:
+			return 0;
+	}
 }
 
 /*
@@ -77,7 +153,9 @@ int rockScissorPaper (char playerOne, char playerTwo) {
  * @return an int containing the ASCII value of the character
  */
 int asciiValue (char c) {
-	// CODE HERE
+	
+	return int(c);
+
 }
 
 /*
@@ -86,7 +164,14 @@ int asciiValue (char c) {
  * @return a string containing the input string, converted to all lowercase characters.
  */
 string toLower (string input) {
-	// CODE HERE
+	
+	for(int i = 0; i < input.length(); i++)
+		{
+			input[i]=tolower(input[i]);
+		}
+		
+		return input;
+
 }
 
 /*
@@ -95,7 +180,14 @@ string toLower (string input) {
  * @return a string containing the input string, converted to all uppercase characters.
  */
 string toUpper (string input) {
-	// CODE HERE
+	
+	for(int i = 0; i < input.length(); i++)
+		{
+			input[i]=toupper(input[i]);
+		}
+		
+		return input;
+		
 }
 
 /*
@@ -108,7 +200,8 @@ string toUpper (string input) {
  * @return a char containing the character from the input string at charIndex position
  */
 char getCharacter (string input, int charIndex) {
-	// CODE HERE
+
+	return input[charIndex];
 }
 
 /*
