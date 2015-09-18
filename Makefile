@@ -11,4 +11,7 @@ challenge-1: challenge-1.cpp
 	g++ -o challenge-1 challenge-1.cpp
 
 challenge-3: challenge-3.cpp
-	g++ -o challenge-3 chalenge-3.cpp
+	g++ -o challenge-3 challenge-3.cpp
+	
+challenge-7: challenge-7.cpp
+	g++ -o challenge-7 challenge-7.cpp
