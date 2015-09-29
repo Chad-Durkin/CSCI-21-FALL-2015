@@ -22,21 +22,19 @@ class Prize
 		 *        at the end of name
 		 * @param newValue unsigned int containing a value for this Prize; default argument is 0
 		 */
-		Prize (string newName("no name!"), unsigned int newValue(0)) :
-			name = newName,
-			value = newValue
-			{}
+		Prize (string newName = "no name!", unsigned int newValue = 0);
+		
 		/*
 		 * Get this Prize's name
 		 * @return a string containing this Prize's name
 		 */
-		 string getName ();
+		string getName ();
 		
 		/*
 		 * Get this Prize's value
 		 * @return an unsigned int containing this Prize's value
 		 */
-		 unsigned int getValue ();
+		unsigned int getValue ();
 		 
 	private:
 	
@@ -60,9 +58,8 @@ class SecretDoor
 		 * @param newPrize Prize containing a Prize that is "hidden" behind this secret door; default argument 
 		 *        is Prize()
 		 */
-		SecretDoor (unsigned int newNumber(1), Prize(Prize())) :
-			number = newNumber,
-			prize.Prize()
+		SecretDoor (unsigned int newNumber = 1, Prize newPrize = Prize()) :
+			number(newNumber), prize(newPrize)
 			{}
 			
 		/*
@@ -94,6 +91,19 @@ int main (int argc, char* argv[]) {
 	return 0;
 }
 
+Prize::Prize (string newName, unsigned int newValue)
+: name(newName), value(newValue)
+{
+
+	if(value > 100)
+	{
+		for(int i = 0; i < name.length(); i++)
+		{
+		name[i] = toupper(name[i]);
+		}
+		name.append("!");
+	}
+}
 // CODE HERE -- FUNCTION DEFINITIONS FOR PRIZE; USE INITIALIZER SECTION FOR CONSTRUCTOR
 string Prize::getName (){
 	return name;
@@ -104,7 +114,7 @@ unsigned int Prize::getValue (){
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS FOR SECRETDOOR; USE INITIALIZER SECTION FOR CONSTRUCTOR
-unsigned int SecretDoor::GetNumber (){
+unsigned int SecretDoor::getNumber (){
 	return number;
 }
 
