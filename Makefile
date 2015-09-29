@@ -15,3 +15,12 @@ challenge-3: challenge-3.cpp
 	
 challenge-7: challenge-7.cpp
 	g++ -o challenge-7 challenge-7.cpp
+	
+project-1: project-1.cpp
+	g++ -o project-1 project-1.cpp
+	
+challenge-10: challenge-10.cpp
+	g++ -o challenge-10 challenge-10.cpp
+	
+challenge-11: challenge-11.cpp
+	g++ -o challenge-11 challenge-11.cpp
