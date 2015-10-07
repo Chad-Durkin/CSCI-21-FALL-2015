@@ -1,5 +1,9 @@
 /*
  * Programming Challenge 13
+ * Chad Durkin
+ * 10/6
+ * 10/6
+ * counting the type of variables in a string
  */
 #include <cassert>
 #include <cstdlib>
@@ -71,7 +75,113 @@ int main (int argc, char* argv[]) {
 }
 
 // CODE HERE -- FUNCTION DEFINITIONS
+string* makeDynoString (string contents) {
+	
+	string* ptrString;
+	
+	ptrString = new string [contents.length()];
+	
+	for(int i = 0; i < contents.length(); i++)
+	{
+		ptrString[i] = contents[i];
+	}
+	
+	return ptrString;
+}
 
+void clearDynoString (string*& theString) {
+	
+	delete theString;
+	
+	theString = NULL;
+}
+
+unsigned int countChars (string* theString, unsigned int& alpha, unsigned int& num) {
+	
+	if(theString == NULL)
+	{
+		throw ArrayException("NULL STRING REFERENCE");
+	}
+
+
+	unsigned int stringLength = theString->length();
+
+
+	//char *tempString = new char[stringLength];
+	
+	//for(int i = 0; i < stringLength; i++)
+	//{
+	//	tempString[i] = theString[i];
+	//}
+	
+	
+	//string *ptrString = &theString;
+	
+	
+	//for(int i = 0; i < stringLength; i++)
+	//{
+
+	//	if((&tempString[i] >= 'a' && &tempString[i] <= 'z') || (&tempString[i] >= 'A' && &tempString[i] <= 'Z')))
+	//	{
+	//		alpha++;
+	//	}
+		
+	//	if(isdigit(&tempString[i]))
+	//	{
+	//		num++
+	//	}
+	//}
+
+
+	return stringLength;
+}
+
+bool findWord (string* theString, string theWord) {
+	
+	if(theString == NULL)
+	{
+		throw ArrayException("NULL STRING REFERENCE");
+	}
+
+
+	if(theString->find(theWord))
+	{
+		return true;
+	}
+	
+	
+	return false;
+}
+
+bool replaceWord (string* theString, string oldWord, string newWord) {
+	
+	if(theString == NULL)
+	{
+		throw ArrayException("NULL STRING REFERENCE");
+	}
+	
+
+	int pos = theString->find(oldWord);
+	
+	theString->erase(pos, oldWord.length());
+	
+	theString->insert(pos, newWord);
+	
+	
+//	if(theString.find(oldWord))
+//	{
+//		for(int pos = 0; pos < oldWord.length(); pos++)
+//		{
+			
+//			theString.replace(pos, oldWord.length(), newWord);
+		
+//		}
+		
+//		return true;
+//	}
+	
+//	return false;
+}
 /*
  * Unit testing functions. Do not alter.
  */
