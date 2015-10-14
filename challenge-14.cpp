@@ -1,5 +1,9 @@
 /*
  * Programming Challenge 14
+ * Chad Durkin
+ * 10/13
+ * 10/13
+ * working with array memory
  */
 #include <cassert>
 #include <iostream>
