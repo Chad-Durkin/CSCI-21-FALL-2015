@@ -30,3 +30,6 @@ challenge-12: challenge-12.cpp
 
 challenge-13: challenge-13.cpp
 	g++ -o challenge-13 challenge-13.cpp
+
+challenge-14: challenge-14.cpp
+	g++ -o challenge-14 challenge-14.cpp
