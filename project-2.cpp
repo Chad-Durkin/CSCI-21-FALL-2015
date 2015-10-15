@@ -69,6 +69,8 @@ class Prize {
 
     private:
 
+    string itemName;
+    unsigned int itemValue;
     string prizeName;
     unsigned int prizeValue;
 
@@ -89,7 +91,7 @@ class Box {
     };
     
     //overloaded constructor for Box
-    Box(unsigned int boxNumber, string boxColor, unsigned int prizeCapacity)
+    Box(unsigned int theBoxNumber, string theBoxColor, unsigned int thePrizeCapacity)
     {
         //prizes = prizeCapacity //initialize prizes to match prizeCapacity
     };
@@ -147,7 +149,14 @@ class Box {
 
 };
 */
+//Throw exception
+struct ArrayException {
+    ArrayException (string newMessage="error")
+    : message(newMessage) {
+    }
 
+    string message;
+};
 
 
 int main() {
@@ -165,18 +174,21 @@ int main() {
 /*****************************PRIZE FUNCTIONS*****************************/
 
 Prize::Prize() {
-    
-    
+
+    itemName = "NO NAME"
+    itemValue = 0;
+
 }
 
-Prize::Prize(string itemName, unsigned int itemValue, string prizeName, unsigned int prizeValue) {
+Prize::Prize(string itemName, unsigned int itemValue) {//, string prizeName, unsigned int prizeValue) {
     
+    prizeName = itemName;
+    prizeValue = itemValue;
     
 }
 
 Prize::~Empty() {
-    
-    
+
 }
 
 string Prize::getItemName() {
@@ -233,11 +245,20 @@ unsigned int Prize::setPrizeValue(unsigned int valueOfPrize) {
 /*****************************BOX FUNCTIONS*****************************/
 
 Box::Box(){
-    
+
+    boxNumber = 0;
+    boxColor = "NO COLOR";
+    prizeCapacity = 5;
+    prizeCount = 0;
+    prizes[prizeCapacity];
+
 }
 
-Box::Box(unsigned int boxNumber, string boxColor, unsigned int prizeCapacity) {
+Box::Box(unsigned int theBoxNumber, string theBoxColor, unsigned int thePrizeCapacity) {
     
+    boxNumber = theBoxNumber;
+    boxColor = theBoxColor;
+    prizes[thePrizeCapacity];
     
 }
 
@@ -284,11 +305,25 @@ unsigned int Box::getPrizeCount() {
 
 bool Box::addPrize(Prize) {
     
+    if(prizeCount >= prizeCapacity)
+    {
+        return false;
+    }
     
+    (*prizes)[prizeCount] = Prize;
     
+    return true;
+
 }
 
 Prize& Box::getPrize(unsigned int index) {
+    
+    if(index >= prizeCount)
+    {
+        throw ArrayException("INVALID INDEX");
+    }
+    
+    return prizes[index];
     
     
     
@@ -296,6 +331,18 @@ Prize& Box::getPrize(unsigned int index) {
 
 Prize Box::removePrize(unsigned int index) {
     
+    if(index >= prizeCount)
+    {
+        throw ArrayException("INVALID INDEX")
+    }
     
+    string prizeRemoved = prizes[index];
+    
+    for(int i = 0; i < prizes->length(); i++)
+    {
+        prizes[index] = (*prizes)[index + 1];
+    }
+    
+    return prizeRemoved;
     
 }

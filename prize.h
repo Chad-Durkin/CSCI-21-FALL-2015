@@ -9,7 +9,7 @@
  */
  
 #ifndef PRIZE_H
-#define PRIZE-H
+#define PRIZE_H
 
 template<class T>
 
@@ -18,14 +18,14 @@ class Prize {
     public:
 
     //default constructor
-    Prize()
-    {
-        string itemName = "NO NAME";
-        unsigned int itemValue = 0;
-    };
+    Prize();
+    //{
+    //    string itemName = "NO NAME";
+    //    unsigned int itemValue = 0;
+    //};
     
     //overloaded constructor
-    Prize(string itemName, unsigned int itemValue, string prizeName, unsigned int prizeValue);
+    Prize(string itemName, unsigned int itemValue, string prizeName);//, unsigned int prizeValue);
     
     //destructor
     ~Empty();
@@ -66,6 +66,8 @@ class Prize {
 
     private:
 
+    string itemName;
+    unsigned int itemValue;
     string prizeName;
     unsigned int prizeValue;
 

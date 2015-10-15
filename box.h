@@ -18,20 +18,20 @@ class Box {
     public:
     
     //default constructor for Box
-    Box()
-    {
-        boxNumber = 0;
-        boxColor = "NO COLOR";
-        prizeCapacity = 5;
-        prizeCount = 0;
+    Box();
+    //{
+    //    boxNumber = 0;
+    //    boxColor = "NO COLOR";
+    //    prizeCapacity = 5;
+    //    prizeCount = 0;
         //prizes = prizeCapacity; //initialize prizes to match prizeCapacity
-    };
+    //};
     
     //overloaded constructor for Box
-    Box(unsigned int boxNumber, string boxColor, unsigned int prizeCapacity)
-    {
+    Box(unsigned int theBoxNumber, string theBoxColor, unsigned int thePrizeCapacity);
+    //{
         //prizes = prizeCapacity //initialize prizes to match prizeCapacity
-    };
+    //};
     
     ~Box();
     

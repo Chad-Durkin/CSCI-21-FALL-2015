@@ -15,10 +15,7 @@ challenge-3: challenge-3.cpp
 	
 challenge-7: challenge-7.cpp
 	g++ -o challenge-7 challenge-7.cpp
-	
-project-1: project-1.cpp
-	g++ -o project-1 project-1.cpp
-	
+
 challenge-10: challenge-10.cpp
 	g++ -o challenge-10 challenge-10.cpp
 	
@@ -33,3 +30,9 @@ challenge-13: challenge-13.cpp
 
 challenge-14: challenge-14.cpp
 	g++ -o challenge-14 challenge-14.cpp
+
+project-1: project-1.cpp
+	g++ -o project-1 project-1.cpp
+
+project-2: project-2.cpp
+	g++ -o project-2 project-2.cpp
