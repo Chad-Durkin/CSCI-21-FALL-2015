@@ -11,27 +11,27 @@
  
 #include <iostream>
 #include <string>
-#include "prize.h"
-#include "box.h"
+//#include "prize.h"
+//#include "box.h"
 using namespace std;
 
-/*
+
 class Prize {
 
     public:
 
     //default constructor
-    Prize()
-    {
-        string itemName = "NO NAME";
-        unsigned int itemValue = 0;
-    };
+    Prize();
+    //{
+    //    string itemName = "NO NAME";
+    //    unsigned int itemValue = 0;
+    //};
     
     //overloaded constructor
-    Prize(string itemName, unsigned int itemValue, string prizeName, unsigned int prizeValue);
+    Prize(string itemName, unsigned int itemValue);//, string prizeName, unsigned int prizeValue);
     
     //destructor
-    ~Empty();
+    ~Prize();
     
     //friend overloaded constructor
     
@@ -81,20 +81,20 @@ class Box {
     public:
     
     //default constructor for Box
-    Box()
-    {
-        boxNumber = 0;
-        boxColor = "NO COLOR";
-        prizeCapacity = 5;
-        prizeCount = 0;
+    Box();
+    //{
+    //    boxNumber = 0;
+    //    boxColor = "NO COLOR";
+    //    prizeCapacity = 5;
+    //    prizeCount = 0;
         //prizes = prizeCapacity; //initialize prizes to match prizeCapacity
-    };
+    //};
     
     //overloaded constructor for Box
-    Box(unsigned int theBoxNumber, string theBoxColor, unsigned int thePrizeCapacity)
-    {
+    Box(unsigned int theBoxNumber, string theBoxColor, unsigned int thePrizeCapacity);
+    //{
         //prizes = prizeCapacity //initialize prizes to match prizeCapacity
-    };
+    //};
     
     ~Box();
     
@@ -148,7 +148,7 @@ class Box {
     unsigned int prizeCount;
 
 };
-*/
+
 //Throw exception
 struct ArrayException {
     ArrayException (string newMessage="error")
@@ -175,7 +175,7 @@ int main() {
 
 Prize::Prize() {
 
-    itemName = "NO NAME"
+    itemName = "NO NAME";
     itemValue = 0;
 
 }
@@ -187,7 +187,7 @@ Prize::Prize(string itemName, unsigned int itemValue) {//, string prizeName, uns
     
 }
 
-Prize::~Empty() {
+Prize::~Prize() {
 
 }
 
@@ -310,7 +310,7 @@ bool Box::addPrize(Prize) {
         return false;
     }
     
-    (*prizes)[prizeCount] = Prize;
+    prizes[prizeCount] = Prize();
     
     return true;
 
@@ -333,15 +333,17 @@ Prize Box::removePrize(unsigned int index) {
     
     if(index >= prizeCount)
     {
-        throw ArrayException("INVALID INDEX")
+        return scratch;
     }
     
-    string prizeRemoved = prizes[index];
+    Prize prizeRemoved = prizes[index];
     
-    for(int i = 0; i < prizes->length(); i++)
+    for(int i = 0; i < prizeCount; i++)
     {
-        prizes[index] = (*prizes)[index + 1];
+        prizes[index] = prizes[index + 1];
     }
+    
+    prizeCount--;
     
     return prizeRemoved;
     

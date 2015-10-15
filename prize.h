@@ -25,7 +25,7 @@ class Prize {
     //};
     
     //overloaded constructor
-    Prize(string itemName, unsigned int itemValue, string prizeName);//, unsigned int prizeValue);
+    Prize(string itemName, unsigned int itemValue);//, string prizeName, unsigned int prizeValue);
     
     //destructor
     ~Empty();

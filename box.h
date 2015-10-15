@@ -85,3 +85,5 @@ class Box {
     unsigned int prizeCount;
 
 };
+
+#endif
